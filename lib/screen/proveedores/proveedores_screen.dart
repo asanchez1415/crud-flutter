@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:crud_flutter/models/proveedor.dart';
 import 'package:crud_flutter/services/get_service.dart';
 import 'package:flutter/material.dart';
@@ -40,9 +42,9 @@ class _ProveedoresScreenState extends State<ProveedoresScreen> {
                   title: Text(proveedores[index].providerName),
                   trailing: const Icon(Icons.arrow_forward_ios),
                   onTap: () {
-                    // final nombre = productos[index];
-                    Navigator.pushNamed(context, 'detail',
-                        arguments: {'nombre': 'nombre'});
+                    Object proveedor = proveedores[index].toJson();
+                    Navigator.pushNamed(context, 'proveedor-detail-edit',
+                        arguments: proveedor);
                   },
                 ),
                 separatorBuilder: (_, __) => const Divider(),
