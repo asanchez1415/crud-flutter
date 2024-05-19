@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future<void> postService(String url, Object data, context) async {
+Future<void> postService(
+    String url, Object data, context, String redirect) async {
   const String apiUser = 'test';
   const String apiPass = 'test2023';
   const String baseUrl = '143.198.118.203:8050';
@@ -23,7 +24,7 @@ Future<void> postService(String url, Object data, context) async {
     String message = jsonDecode(response.body)['MSJ'];
     final snackBar = SnackBar(content: Text(message.toString()));
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-    Navigator.pushNamed(context, 'proveedores');
+    Navigator.pushNamed(context, redirect);
   } else {
     const snackBar = SnackBar(content: Text('Ha ocurrido un error'));
     ScaffoldMessenger.of(context).showSnackBar(snackBar);

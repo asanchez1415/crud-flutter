@@ -72,7 +72,8 @@ class ProveedoresFormWidget extends StatelessWidget {
                   "provider_mail": controllerMail.text,
                   "provider_state": 'Activo',
                 };
-                postService('ejemplos/provider_add_rest/', data, context);
+                postService('ejemplos/provider_add_rest/', data, context,
+                    'proveedores');
               } else if (type == 'edit') {
                 Object data = {
                   "provider_id": arguments['providerid'],
@@ -81,7 +82,8 @@ class ProveedoresFormWidget extends StatelessWidget {
                   "provider_mail": controllerMail.text,
                   "provider_state": arguments['provider_state'],
                 };
-                postService('ejemplos/provider_add_rest/', data, context);
+                postService('ejemplos/provider_edit_rest/', data, context,
+                    'proveedores');
               }
             },
             child: Text(type == 'create' ? 'Crear' : 'Editar'),

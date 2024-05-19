@@ -16,7 +16,7 @@ class _ProveedoresScreenState extends State<ProveedoresScreen> {
   @override
   void initState() {
     super.initState();
-    futureProveedores = getData('ejemplos/provider_list_rest/');
+    futureProveedores = getProveedores('ejemplos/provider_list_rest/');
   }
 
   @override

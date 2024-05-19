@@ -7,3 +7,8 @@ export 'package:crud_flutter/screen/proveedores/proveedor_edit_screen.dart';
 export 'package:crud_flutter/screen/proveedores/proveedores_screen.dart';
 export 'package:crud_flutter/screen/categorias/categorias_screen.dart';
 export 'package:crud_flutter/screen/productos/productos_screen.dart';
+export 'package:crud_flutter/screen/categorias/categorias_opciones_screen.dart';
+export 'package:crud_flutter/screen/proveedores/proveedor_create_screen.dart';
+export 'package:crud_flutter/screen/proveedores/proveedores_opciones_screen.dart';
+export 'package:crud_flutter/screen/categorias/categoria_edit_screen.dart';
+export 'package:crud_flutter/screen/categorias/categorias_create_screen.dart';

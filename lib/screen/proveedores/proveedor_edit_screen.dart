@@ -1,5 +1,5 @@
 import 'package:crud_flutter/widgets/appbar_widget.dart';
-import 'package:crud_flutter/widgets/proveedores/proveedores_form_widget.dart';
+import 'package:crud_flutter/widgets/proveedores_form_widget.dart';
 import 'package:flutter/material.dart';
 
 class ProveedorEditScreen extends StatefulWidget {
