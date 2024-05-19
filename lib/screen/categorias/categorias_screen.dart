@@ -57,7 +57,7 @@ class _CategoriasScreenState extends State<CategoriasScreen> {
                     shrinkWrap: true,
                     itemCount: categorias.length,
                     itemBuilder: (context, index) => ListTile(
-                      leading: const Icon(Icons.person),
+                      leading: const Icon(Icons.category),
                       title: Text(categorias[index].categoryName),
                       trailing: const Icon(Icons.arrow_forward_ios),
                       onTap: () {

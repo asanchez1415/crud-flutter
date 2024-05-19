@@ -1,28 +1,21 @@
+// To parse this JSON data, do
+//
+//     final producto = productoFromJson(jsonString);
+
 import 'dart:convert';
 
-class Product {
-  Product({
-    required this.listado,
-  });
+Producto productoFromJson(String str) => Producto.fromJson(json.decode(str));
 
-  List<Listado> listado;
+String productoToJson(Producto data) => json.encode(data.toJson());
 
-  factory Product.fromJson(String str) => Product.fromMap(json.decode(str));
+class Producto {
+  int productId;
+  String productName;
+  int productPrice;
+  String productImage;
+  String productState;
 
-  String toJson() => json.encode(toMap());
-
-  factory Product.fromMap(Map<String, dynamic> json) => Product(
-        listado:
-            List<Listado>.from(json["Listado"].map((x) => Listado.fromMap(x))),
-      );
-
-  Map<String, dynamic> toMap() => {
-        "Listado": List<dynamic>.from(listado.map((x) => x.toMap())),
-      };
-}
-
-class Listado {
-  Listado({
+  Producto({
     required this.productId,
     required this.productName,
     required this.productPrice,
@@ -30,17 +23,7 @@ class Listado {
     required this.productState,
   });
 
-  int productId;
-  String productName;
-  int productPrice;
-  String productImage;
-  String productState;
-
-  factory Listado.fromJson(String str) => Listado.fromMap(json.decode(str));
-
-  String toJson() => json.encode(toMap());
-
-  factory Listado.fromMap(Map<String, dynamic> json) => Listado(
+  factory Producto.fromJson(Map<String, dynamic> json) => Producto(
         productId: json["product_id"],
         productName: json["product_name"],
         productPrice: json["product_price"],
@@ -48,18 +31,11 @@ class Listado {
         productState: json["product_state"],
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toJson() => {
         "product_id": productId,
         "product_name": productName,
         "product_price": productPrice,
         "product_image": productImage,
         "product_state": productState,
       };
-
-  Listado copy() => Listado(
-      productId: productId,
-      productName: productName,
-      productPrice: productPrice,
-      productImage: productImage,
-      productState: productState);
 }

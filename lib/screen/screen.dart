@@ -12,3 +12,6 @@ export 'package:crud_flutter/screen/proveedores/proveedor_create_screen.dart';
 export 'package:crud_flutter/screen/proveedores/proveedores_opciones_screen.dart';
 export 'package:crud_flutter/screen/categorias/categoria_edit_screen.dart';
 export 'package:crud_flutter/screen/categorias/categorias_create_screen.dart';
+export 'package:crud_flutter/screen/productos/producto_create_screen.dart';
+export 'package:crud_flutter/screen/productos/producto_edit_screen.dart';
+export 'package:crud_flutter/screen/productos/productos_opciones_screen.dart';

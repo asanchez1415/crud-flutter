@@ -23,7 +23,12 @@ class AppRoutes {
     'categoria-create': (BuildContext context) =>
         const CategoriasCreateScreen(),
     //
+    // Productos
     'productos': (BuildContext context) => const ProductosScreen(),
+    'productos-opciones': (BuildContext context) =>
+        const ProductosOpcionesScreen(),
+    'producto-edit': (BuildContext context) => const ProductoEditScreen(),
+    'producto-create': (BuildContext context) => const ProductoCreateScreen(),
   };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

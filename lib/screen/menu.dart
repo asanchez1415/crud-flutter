@@ -48,7 +48,7 @@ class MenuScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, 'categorias');
                   },
-                  icon: const Icon(Icons.person_sharp),
+                  icon: const Icon(Icons.category),
                   label: const Text(
                     'Categorías',
                     style: TextStyle(fontSize: 18),
@@ -67,7 +67,7 @@ class MenuScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, 'productos');
                   },
-                  icon: const Icon(Icons.person_sharp),
+                  icon: const Icon(Icons.shopping_bag),
                   label: const Text(
                     'Productos',
                     style: TextStyle(fontSize: 18),

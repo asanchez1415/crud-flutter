@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:crud_flutter/routes/app_routes.dart';
 import 'package:crud_flutter/services/auth_service.dart';
-import 'package:crud_flutter/services/product_service.dart';
 import 'package:crud_flutter/theme/my_theme.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +12,6 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthService()),
-        ChangeNotifierProvider(create: (_) => ProductService()),
       ],
       child: const MainApp(),
     );
