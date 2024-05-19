@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ListProductScreen extends StatelessWidget {
-  const ListProductScreen({super.key});
+class MenuScreen extends StatelessWidget {
+  const MenuScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,9 @@ class ListProductScreen extends StatelessWidget {
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.orange),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'categorias');
+                  },
                   icon: const Icon(Icons.person_sharp),
                   label: const Text(
                     'Categorías',
@@ -62,7 +64,9 @@ class ListProductScreen extends StatelessWidget {
                     backgroundColor:
                         MaterialStateProperty.all<Color>(Colors.orange),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'productos');
+                  },
                   icon: const Icon(Icons.person_sharp),
                   label: const Text(
                     'Productos',

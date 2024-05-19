@@ -96,7 +96,7 @@ class ProductService extends ChangeNotifier {
     print(decodeResp);
     this.products.clear(); //borra todo el listado
     loadProducts();
-    Navigator.of(context).pushNamed('list');
+    Navigator.of(context).pushNamed('menu');
     return '';
   }
 }

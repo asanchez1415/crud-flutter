@@ -1,22 +1,15 @@
+import 'package:crud_flutter/widgets/appbar_widget.dart';
 import 'package:crud_flutter/widgets/proveedores/proveedores_form_widget.dart';
 import 'package:flutter/material.dart';
 
-class ProveedorDetailEditScreen extends StatefulWidget {
-  const ProveedorDetailEditScreen({super.key});
+class ProveedorCreateScreen extends StatefulWidget {
+  const ProveedorCreateScreen({super.key});
 
   @override
-  State<ProveedorDetailEditScreen> createState() =>
-      _ProveedorDetailEditScreenState();
+  State<ProveedorCreateScreen> createState() => _ProveedorCreateScreenState();
 }
 
-class _ProveedorDetailEditScreenState extends State<ProveedorDetailEditScreen> {
-  @override
-  // ignore: must_call_super
-  initState() {
-    // ignore: avoid_print
-    print("initState Called");
-  }
-
+class _ProveedorCreateScreenState extends State<ProveedorCreateScreen> {
   @override
   Widget build(BuildContext context) {
     final arguments = (ModalRoute.of(context)?.settings.arguments ??
@@ -29,19 +22,18 @@ class _ProveedorDetailEditScreenState extends State<ProveedorDetailEditScreen> {
     TextEditingController controllerMail =
         TextEditingController(text: arguments['provider_mail']);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detalle del proveedor'),
-      ),
+    return AppBarWidget(
+      title: 'Crear proveedor',
       body: Padding(
         padding: const EdgeInsets.only(top: 20, left: 15, right: 15),
         child: Column(
           children: [
             ProveedoresFormWidget(
-              controllerName: controllerName,
-              controllerLastName: controllerLastName,
-              controllerMail: controllerMail,
-            )
+                controllerName: controllerName,
+                controllerLastName: controllerLastName,
+                controllerMail: controllerMail,
+                arguments: arguments,
+                type: 'create')
           ],
         ),
       ),

@@ -1,13 +1,20 @@
+import 'package:crud_flutter/services/post_service.dart';
 import 'package:flutter/material.dart';
 
 class ProveedoresFormWidget extends StatelessWidget {
-  TextEditingController controllerName, controllerLastName, controllerMail;
+  final TextEditingController controllerName,
+      controllerLastName,
+      controllerMail;
+  final arguments;
+  final String type;
 
-  ProveedoresFormWidget(
+  const ProveedoresFormWidget(
       {super.key,
+      required this.arguments,
       required this.controllerLastName,
       required this.controllerName,
-      required this.controllerMail});
+      required this.controllerMail,
+      required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +60,32 @@ class ProveedoresFormWidget extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        FilledButton(
-          onPressed: () {
-            // print(controllerName.text);
-          },
-          child: Text('Editar'),
+        SizedBox(
+          height: 50,
+          width: 100,
+          child: FilledButton(
+            onPressed: () {
+              if (type == 'create') {
+                Object data = {
+                  "provider_name": controllerName.text,
+                  "provider_last_name": controllerLastName.text,
+                  "provider_mail": controllerMail.text,
+                  "provider_state": 'Activo',
+                };
+                postService('ejemplos/provider_add_rest/', data, context);
+              } else if (type == 'edit') {
+                Object data = {
+                  "provider_id": arguments['providerid'],
+                  "provider_name": controllerName.text,
+                  "provider_last_name": controllerLastName.text,
+                  "provider_mail": controllerMail.text,
+                  "provider_state": arguments['provider_state'],
+                };
+                postService('ejemplos/provider_add_rest/', data, context);
+              }
+            },
+            child: Text(type == 'create' ? 'Crear' : 'Editar'),
+          ),
         ),
       ],
     );

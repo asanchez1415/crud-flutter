@@ -1,3 +1,5 @@
+import 'package:crud_flutter/screen/proveedores/proveedor_create_screen.dart';
+import 'package:crud_flutter/screen/proveedores/proveedores_opciones_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:crud_flutter/screen/screen.dart';
 
@@ -5,12 +7,14 @@ class AppRoutes {
   static const initialRoute = 'login';
   static Map<String, Widget Function(BuildContext)> routes = {
     'login': (BuildContext context) => const LoginScreen(),
-    'list': (BuildContext context) => const ListProductScreen(),
+    'menu': (BuildContext context) => const MenuScreen(),
     'add_user': (BuildContext context) => const RegisterUserScreen(),
     // Proveedores
     'proveedores': (BuildContext context) => const ProveedoresScreen(),
-    'proveedor-detail-edit': (BuildContext context) =>
-        const ProveedorDetailEditScreen(),
+    'proveedores-opciones': (BuildContext context) =>
+        const ProveedoresOpcionesScreen(),
+    'proveedor-edit': (BuildContext context) => const ProveedorEditScreen(),
+    'proveedor-create': (BuildContext context) => const ProveedorCreateScreen(),
     //
     'categorias': (BuildContext context) => const CategoriasScreen(),
     //
